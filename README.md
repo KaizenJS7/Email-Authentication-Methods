@@ -186,5 +186,42 @@ If we remember, we had the domain name which was <b>namecheap.com</b>, and we ha
 <img src="https://i.imgur.com/KbsL8OT.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br> 
 
-And if we do a DKIM lookup, well we can 
+And if we do a DKIM lookup, well we can get the same results
 
+<img src="https://i.imgur.com/t8i7Nzn.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+Now if we go to the <b>Analyze Headers</b> section and we copy all the contents of our email in Sublime Text and paste it in, we can analyze the header which will perform some DKIM checks for us.
+
+<img src="https://i.imgur.com/FIsFTXX.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br> 
+
+<img src="https://i.imgur.com/zpZQSD1.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br>
+
+<img src="https://i.imgur.com/RAdGgZu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br>
+
+If we scroll down to <b>dkim:namecheap.com:s1</b>, well this was the DKIM signature that we were analyzing manually.
+
+<img src="https://i.imgur.com/pdWY1Fs.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br>
+
+If we click on "<b>Show</b>", we can see all of the checks that were performed.
+
+<img src="https://i.imgur.com/mhAj96O.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br>
+
+We can see that the DKIM record was found and that the record was valid. We can see that the public key was present, which of course we verified manually, but that the signature was also valid. We can see that the signature domain matched and there was alignment with the signature in the domain. So alignment is when DKIM signing domain matches the header from domian. In this case, it was <b>namecheap.com</b>, so it does check out. We notice that the body hash did not verify. This is something we want to make note of because it means something in the contents of the email message were changed, obviously breaking integrity. However, in this case it's actually expected here because for the course, they had to manually redact some identifiable information like the original recipient. So we don't have to worry about the body hash check for this example.
+
+<h2>Final Analysis</h2>
+
+So after all the analysis we done, was this email real or was it a phishing attempt?
+
+<img src="https://i.imgur.com/DDJdIo2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br>
+
+Well, if not obvious already with all our checks, it was in fact a legitimate email.
+
+I will stress again that these email authentication checks are not a silver bullet for determining the legitimacy of an email. They simply confirm that the email has passed through certain authentication protocols like SPF and DKIM. While passing these checks is a positive sign, it never guarentees that the email is completely safe or genuine.
+
+<b>THIS WAS FOR EDUCATIONAL PURPOSES ONLY</b>
