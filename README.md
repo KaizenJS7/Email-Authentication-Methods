@@ -57,7 +57,7 @@ DomainKeys Identified Mail (DKIM) is an email authentication method that allows 
 <b>Limitations of DKIM:</b> 
 
 - <b>Does Not Prevent Spoofing Alone:</b> DKIM does not verify the "From" header address; it only ensures the email content's integrity and authenticity.
-- <b>Requires COrrect Configuration:</b> Both sending and receiving servers need proper configuration for DKIM to be effective.
+- <b>Requires Correct Configuration:</b> Both sending and receiving servers need proper configuration for DKIM to be effective.
 - <b>Dependent on DNS:</b> Public keys must be maintained and accessible via DNS, making it dependent on reliable DNS management.
 
 <img src="https://i.imgur.com/Tt4cVpU.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
