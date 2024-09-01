@@ -1,4 +1,4 @@
-<h1>Email Authentication Methods (Hands On)</h1>
+<h1>Email Authentication Methods</h1>
 
 <h2>Sender Policy Framework (SPF)</h2>
 
